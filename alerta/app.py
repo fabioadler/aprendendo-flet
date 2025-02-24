@@ -4,7 +4,7 @@ from flet import *
 def my_app(page:Page):
     page.title = "Testando os alertas"
     alerta = AlertDialog(
-        modal=True,
+        modal=True, #modal basicamente faz com que não se possa fechar o alerta clicando em qualque lugar fora do alerta, mas apénas uma das ações
         title=Text("Teste de alerta"),
         content=Text("Nosso alerta bem sucedido!"),
         actions=[
