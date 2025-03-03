@@ -10,3 +10,4 @@ flet-permission-handler
 flet-rive
 flet-video
 flet-webview
+fletcarousel
