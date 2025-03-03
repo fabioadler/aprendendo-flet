@@ -10,10 +10,6 @@ class my_app():
         self.page.window.height = 600
         self.page.window.left = 20
         self.page.padding = 0
-        self.home()
-        self.page.update()
-
-    def home(self):
         self.stack = ft.Stack(
             expand = True,
             controls=[
@@ -185,6 +181,8 @@ class my_app():
             ]
         )
         self.page.add(self.stack)
+        self.page.update()
+        
         
 
     def mini(self, e):
