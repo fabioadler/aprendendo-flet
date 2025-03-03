@@ -10,4 +10,5 @@ flet-permission-handler
 flet-rive
 flet-video
 flet-webview
+flet_core
 fletcarousel
