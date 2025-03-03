@@ -25,7 +25,7 @@ class my_app():
                             ft.Container(
                                 width = (0.3*self.page.window.width),
                                 height = (1*self.page.window.height),
-                                padding = 0,
+                                padding = ft.padding.all(0),
                                 gradient = ft.LinearGradient(
                                     begin = ft.alignment.top_center,
                                     end = ft.alignment.bottom_center,
@@ -33,26 +33,31 @@ class my_app():
                                 ),
                                 content = ft.Column(
                                     horizontal_alignment = "center",
+                                    spacing=20,
                                     controls = [
                                         ft.Container(
                                             content = ft.Image(
                                                 src = "riot-games-new-logo-qhg.png",
-                                                width = (0.15*self.page.window.width),
+                                                width = (0.18*self.page.window.width),
                                                 height = (0.2*self.page.window.height),
                                                 fit = ft.ImageFit.COVER
                                             )
                                         ),
                                         ft.Container(
-                                            width=(0.17*self.page.window.width),
+                                            width=(0.185*self.page.window.width),
                                             border_radius=8,
                                             bgcolor="#152943",
                                             padding=6,
+                                            alignment = ft.alignment.center,
                                             content = ft.Row(
                                                 spacing=5,
                                                 alignment=ft.alignment.center,
                                                 controls=[
                                                     ft.Container(
+                                                        ink = True,
+                                                        on_click = lambda e: print("login"),
                                                         border_radius=8,
+                                                        padding=5,
                                                         alignment=ft.alignment.center,
                                                         content=ft.Row(
                                                             controls=[
@@ -68,7 +73,10 @@ class my_app():
                                                         )
                                                     ),
                                                     ft.Container(
+                                                        ink = True,
+                                                        on_click = lambda e: print("QR Code"),
                                                         border_radius=8,
+                                                        padding=5,
                                                         alignment=ft.alignment.center,
                                                         content=ft.Row(
                                                             controls=[
@@ -88,22 +96,48 @@ class my_app():
                                         ),
                                         ft.Container(
                                             content = ft.Column(
+                                                spacing=15,
                                                 alignment=ft.alignment.center,
                                                 controls=[
                                                     ft.TextField(
                                                         width = (0.20*self.page.window.width),
                                                         height = (0.07*self.page.window.height),
                                                         label = "Usuario",
-                                                        label_style=ft.TextStyle(color = "#a0cafd")
+                                                        label_style=ft.TextStyle(color = "#a0cafd"),
+                                                        border_color="transparent",
+                                                        bgcolor="#152943"
                                                     ),
                                                     ft.TextField(
-                                                        width = (0.20*self.page.window.width),
+                                                        width = (0.2*self.page.window.width),
                                                         height = (0.07*self.page.window.height),
                                                         label = "Senha",
-                                                        label_style=ft.TextStyle(color = "#a0cafd")
+                                                        label_style=ft.TextStyle(color = "#a0cafd"),
+                                                        border_color="transparent",
+                                                        bgcolor="#152943",
+                                                        password = True,
+                                                        can_reveal_password=True
                                                     )
                                                 ]
                                             ) 
+                                        ),
+                                        ft.Container(
+                                            content = ft.Row(
+                                                vertical_alignment = ft.alignment.center,
+                                                width = (0.2*self.page.window.width),
+                                                height = (0.07*self.page.window.height),
+                                                controls = [
+                                                    ft.Checkbox(
+                                                        label = "Lembre de min",
+                                                        label_style = ft.TextStyle(color="#a0cafd"),
+                                                        border_side = ft.BorderSide(color="#a0cafd",width=1)
+                                                    ),
+                                                ] 
+                                            )
+                                        ),
+                                        ft.FloatingActionButton(
+                                            icon = ft.Icons.ARROW_FORWARD,
+                                            bgcolor = "#193457",
+                                            foreground_color = "white"
                                         )
                                     ]
                                 )
