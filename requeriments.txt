@@ -11,4 +11,5 @@ flet-rive
 flet-video
 flet-webview
 flet_core
+pydantic
 fletcarousel
